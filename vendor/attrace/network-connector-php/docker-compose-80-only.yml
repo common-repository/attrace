@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  php80_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php80.docker
+    volumes:
+      - ./docker/build/php80:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all

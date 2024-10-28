@@ -1,0 +1,20 @@
+{
+  "name": "attrace/wordpress",
+  "description": "Attrace Decentralised Affiliate Network",
+  "keywords": [
+    "decentralised",
+    "affiliate",
+    "blockchain"
+  ],
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://gitlab.com/attrace/network-connector-php.git"
+    }
+  ],
+  "require": {
+    "attrace/network-connector-php": "dev-master",
+    "ext-json": "*"
+  }
+}

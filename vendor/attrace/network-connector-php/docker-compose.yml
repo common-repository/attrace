@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  php56_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php56.docker
+    volumes:
+      - ./docker/build/php56:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+  php70_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php70.docker
+    volumes:
+      - ./docker/build/php70:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php56_connector
+  php71_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php71.docker
+    volumes:
+      - ./docker/build/php71:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php70_connector
+  php72_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php72.docker
+    volumes:
+      - ./docker/build/php72:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php71_connector
+  php73_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php73.docker
+    volumes:
+      - ./docker/build/php73:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php72_connector
+  php74_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php74.docker
+    volumes:
+      - ./docker/build/php74:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php73_connector
+  php80_connector:
+    build:
+      context: .
+      dockerfile: docker/attrace.connector.php80.docker
+    volumes:
+      - ./docker/build/php80:/var/www/html/build
+      - ./docker/build:/var/www/html/build_all
+    depends_on:
+      - php74_connector
